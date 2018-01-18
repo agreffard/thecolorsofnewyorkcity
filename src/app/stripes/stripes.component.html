@@ -1,0 +1,13 @@
+
+<app-stripe-detail [stripe]="selectedStripe"></app-stripe-detail>
+
+<div class="stripes">
+  <div
+  *ngFor="let stripe of stripes"
+  [class.selected]="stripe === selectedStripe"
+  [ngStyle]="getStyle(stripe)"
+  (mouseover)="onSelect(stripe)">
+    <!--<span>{{stripe.id}}</span> {{stripe.text | uppercase}} - {{stripe.color}}-->
+  </div>
+</div>
+
