@@ -47,7 +47,7 @@ export class StripesComponent implements OnInit {
     	return {
         "background": 'url("'+this.getUrl(stripe)+'")',
         "background-size": 'cover',
-        "background-position": 'center';
+        "background-position": 'center',
         "grid-column": (stripe.id + 1) / nbLines,
         "grid-row": (stripe.id + 1) % nbLines
       }
