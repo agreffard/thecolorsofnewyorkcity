@@ -15,4 +15,18 @@ export class StripeDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+  getUrl(stripe) {
+  	return "assets/images/" + stripe.image;
+  }
+
+  getPreviewColorStyle(stripe) {
+  let size = '50px';
+  	return {
+  	  "background-color": stripe.color,
+  	  "width": size,
+  	  "height": size,
+  	  "border-radius": '50%'
+    };
+  }
+
 }

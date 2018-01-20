@@ -13,9 +13,18 @@ export class StripesComponent implements OnInit {
   stripes = [];
 
   selectedStripe: Stripe;
+  previewStripe: Stripe;
 
   onSelect(stripe: Stripe): void {
     this.selectedStripe = stripe;
+  }
+
+  showPreview(stripe: Stripe): void {
+    this.previewStripe = stripe;
+  }
+
+  hidePreview(): void {
+    this.previewStripe = null;
   }
 
   constructor(private stripeService: StripeService) { }
@@ -28,11 +37,28 @@ export class StripesComponent implements OnInit {
     this.stripeService.getStripes().subscribe(stripes => this.stripes = stripes);
   }
 
-  getStyle(stripe) {
-  	return {
-      "background-color": stripe.color,
-      "grid-column": stripe.id + 1,
-      "grid-row": '1'
-    }
+  getUrl(stripe) {
+  	return "assets/images/" + stripe.image;
   }
+
+  getStyle(stripe, nbLines) {
+    
+    if (stripe === this.previewStripe) {
+    	return {
+        "background": 'url("'+this.getUrl(stripe)+'")',
+        "background-size": 'cover',
+        "background-position": 'center';
+        "grid-column": (stripe.id + 1) / nbLines,
+        "grid-row": (stripe.id + 1) % nbLines
+      }
+    } else {
+      return {
+        "background-color": stripe.color,
+        "grid-column": (stripe.id + 1) / nbLines,
+        "grid-row": (stripe.id + 1) % nbLines
+      }
+    }
+    
+  }
+
 }

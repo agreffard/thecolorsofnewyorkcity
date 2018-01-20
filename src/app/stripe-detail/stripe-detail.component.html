@@ -1,4 +1,16 @@
-<div *ngIf="stripe">
-  <span>{{stripe.text | uppercase }}</span>
-  {{stripe.color}}
+<div *ngIf="stripe"
+class="stripe-detail"
+(click)="stripe = null">
+  <!-- <div class="exit-button" (click)="stripe = null">X</div> -->
+  <img [src]="getUrl(stripe)" />
+  <div class="stripe-info">
+    <div class="preview-color">
+      <div [ngStyle]="getPreviewColorStyle(stripe)" class="preview-color-circle"></div>
+      <div class="preview-color-color">
+        <span>Color n°{{stripe.id+1}}</span><br />
+        <span>{{stripe.color}}</span>
+      </div>
+    </div>
+    <div class="stripe-text">{{stripe.text | uppercase }}</div>
+  </div>
 </div>

@@ -1,13 +1,17 @@
 
-<app-stripe-detail [stripe]="selectedStripe"></app-stripe-detail>
-
-<div class="stripes">
-  <div
-  *ngFor="let stripe of stripes"
-  [class.selected]="stripe === selectedStripe"
-  [ngStyle]="getStyle(stripe)"
-  (mouseover)="onSelect(stripe)">
-    <!--<span>{{stripe.id}}</span> {{stripe.text | uppercase}} - {{stripe.color}}-->
+<div class="mainContainer">
+  <div class="stripes">
+    <div
+    *ngFor="let stripe of stripes"
+    [class.selected]="stripe === selectedStripe"
+    [ngStyle]="getStyle(stripe, 17)"
+    (click)="onSelect(stripe)"
+    (mouseover)="showPreview(stripe)">
+      <!-- <img *ngIf="stripe === previewStripe" [src]="getUrl(stripe)" class="preview-image-square"/> -->
+   <!-- <img [src]="getUrl(stripe)" />  -->
+      <!--<span>{{stripe.id}}</span> {{stripe.text | uppercase}} - {{stripe.color}}-->
+    </div>
   </div>
+  	<app-stripe-detail [stripe]="selectedStripe"></app-stripe-detail>
 </div>
 
