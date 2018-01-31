@@ -47,13 +47,14 @@ export class StripesComponent implements OnInit {
       ? 1
       : this.settingsService.mode === "vertical"
         ? 550
-        : 17;
+        : window.innerHeight && window.innerWidth
+          ? Math.floor(Math.sqrt(550 * window.innerHeight / window.innerWidth))
+          : 17;
   }
 
   getStyle(stripe) {
   	let nbLines = this.getNbLines();
     var style = {
-        "background-color": stripe.color,
         "grid-column": Math.ceil((stripe.id + 1) / nbLines),
         "grid-row": (stripe.id) % nbLines + 1
       };
