@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Stripe } from '../stripe';
 import { StripeService } from '../stripe.service';
+import { SettingsService } from '../settings.service';
 import { STRIPES } from '../mock-stripes';
 
 @Component({
@@ -27,7 +28,7 @@ export class StripesComponent implements OnInit {
     this.previewStripe = null;
   }
 
-  constructor(private stripeService: StripeService) { }
+  constructor(private stripeService: StripeService, private settingsService: SettingsService) { }
 
   ngOnInit() {
     this.getStripes();
@@ -41,24 +42,32 @@ export class StripesComponent implements OnInit {
   	return "assets/images/" + stripe.image;
   }
 
-  getStyle(stripe, nbLines) {
-    
-    if (stripe === this.previewStripe) {
-    	return {
-        "background": 'url("'+this.getUrl(stripe)+'")',
-        "background-size": 'cover',
-        "background-position": 'center',
-        "grid-column": (stripe.id + 1) / nbLines,
-        "grid-row": (stripe.id + 1) % nbLines
-      }
-    } else {
-      return {
-        "background-color": stripe.color,
-        "grid-column": (stripe.id + 1) / nbLines,
-        "grid-row": (stripe.id + 1) % nbLines
-      }
-    }
-    
+  getNbLines(): number {
+    return this.settingsService.mode === "horizontal"
+      ? 1
+      : this.settingsService.mode === "vertical"
+        ? 550
+        : 17;
   }
 
+  getStyle(stripe) {
+  	let nbLines = this.getNbLines();
+    var style = {
+        "background-color": stripe.color,
+        "grid-column": Math.ceil((stripe.id + 1) / nbLines),
+        "grid-row": (stripe.id) % nbLines + 1
+      };
+    if ((this.settingsService.mode === "preview" && stripe !== this.previewStripe)
+        || this.settingsService.mode !== "preview" && stripe === this.previewStripe) {
+    	style["background"] = 'url("'+this.getUrl(stripe)+'")';
+        style["background-size"] = 'cover';
+        style["background-position"] = 'center';
+    } else {
+    	style["background-color"] = stripe.color;
+    }
+    if (this.settingsService.mode === "circles") {
+        style["border-radius"]= '50%';
+    }
+    return style;
+  }
 }

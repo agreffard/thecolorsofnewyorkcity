@@ -4,7 +4,7 @@
     <div
     *ngFor="let stripe of stripes"
     [class.selected]="stripe === selectedStripe"
-    [ngStyle]="getStyle(stripe, 17)"
+    [ngStyle]="getStyle(stripe)"
     (click)="onSelect(stripe)"
     (mouseover)="showPreview(stripe)">
       <!-- <img *ngIf="stripe === previewStripe" [src]="getUrl(stripe)" class="preview-image-square"/> -->

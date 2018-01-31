@@ -95,3 +95,12 @@ body, input[text], button {
   padding-right: 100px;
   /*border: 1px solid red;*/
 }
+
+
+.settings-container {
+	position: absolute;
+	top: 10px;
+	text-align: center;
+	width: 100%;
+	margin: auto;
+}
