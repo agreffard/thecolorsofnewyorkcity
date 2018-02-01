@@ -1,7 +1,7 @@
-<p class="settings-container">
-	<a (click)="this.settingsService.setVertical()">Vertical</a>
-	<a (click)="this.settingsService.setHorizontal()">Horizontal</a>
-	<a (click)="this.settingsService.setGrid()">Grid</a>
-	<a (click)="this.settingsService.setCircles()">Circles</a>
-	<a (click)="this.settingsService.setPreview()">Preview</a>
-</p>
+<div class="settings-container">
+	<a class="settings-button settings-button1" (click)="this.settingsService.setHorizontal()">H</a>
+	<a class="settings-button settings-button2" (click)="this.settingsService.setVertical()">V</a>
+	<a class="settings-button settings-button3" (click)="this.settingsService.setGrid()">G</a>
+	<a class="settings-button settings-button4" (click)="this.settingsService.setCircles()">C</a>
+	<a class="settings-button settings-button5" (click)="this.settingsService.setPreview()">P</a>
+</div>

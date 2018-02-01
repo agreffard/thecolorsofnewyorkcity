@@ -98,9 +98,45 @@ body, input[text], button {
 
 
 .settings-container {
+	display: block;
 	position: absolute;
-	top: 10px;
+	top: 0;
+	left: 0;
+	right: 0;
 	text-align: center;
-	width: 100%;
-	margin: auto;
+  width: 200px;
+	height: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	display: grid;
+}
+
+.settings-button {
+	display: block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	margin: 5px;
+	grid-row: 1;
+	background-color: #1a1a1a;
+}
+
+.settings-button1 {
+	grid-column:  1;
+}
+
+.settings-button2 {
+	grid-column:  2;
+}
+
+.settings-button3 {
+	grid-column:  3;
+}
+
+.settings-button4 {
+	grid-column:  4;
+}
+
+.settings-button5 {
+	grid-column:  5;
 }
