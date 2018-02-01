@@ -16,8 +16,23 @@ export class StripesComponent implements OnInit {
   selectedStripe: Stripe;
   previewStripe: Stripe;
 
-  onSelect(stripe: Stripe): void {
+  onMouseOver(stripe: Stripe): void {
+  	if (this.settingsService.mode === 'horizontal' || this.settingsService.mode === 'horizontal') {
+      this.selectStripe(stripe);
+  	} else {
+      this.showPreview(stripe);
+  	}
+  }
+
+  onMouseClick(stripe: Stripe): void {
+    this.selectStripe(stripe);
+  }
+
+  selectStripe(stripe: Stripe): void {
     this.selectedStripe = stripe;
+    setTimeout(function() {
+      this.selectedStripe = null;
+    }.bind(this), 3000);
   }
 
   showPreview(stripe: Stripe): void {

@@ -41,7 +41,7 @@ export class SettingsService {
     this.visible = true;
     setTimeout(function() {
       this.visible = false;
-    }.bind(this), 2000);
+    }.bind(this), 1000);
   }
 
 }

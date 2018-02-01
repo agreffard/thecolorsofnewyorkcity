@@ -5,8 +5,8 @@
     *ngFor="let stripe of stripes"
     [class.selected]="stripe === selectedStripe"
     [ngStyle]="getStyle(stripe)"
-    (click)="onSelect(stripe)"
-    (mouseover)="showPreview(stripe)">
+    (click)="onMouseClick(stripe)"
+    (mouseover)="onMouseOver(stripe)">
       <!-- <img *ngIf="stripe === previewStripe" [src]="getUrl(stripe)" class="preview-image-square"/> -->
    <!-- <img [src]="getUrl(stripe)" />  -->
       <!--<span>{{stripe.id}}</span> {{stripe.text | uppercase}} - {{stripe.color}}-->

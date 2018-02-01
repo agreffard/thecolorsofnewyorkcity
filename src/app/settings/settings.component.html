@@ -2,9 +2,23 @@
 (mouseover)="focus=true"
 (mouseout)="focus=false"
 [@visibilityChanged]="this.settingsService.visible || focus">
-	<a class="settings-button settings-button1" (click)="this.settingsService.setHorizontal()">H</a>
-	<a class="settings-button settings-button2" (click)="this.settingsService.setVertical()">V</a>
-	<a class="settings-button settings-button3" (click)="this.settingsService.setGrid()">G</a>
-	<a class="settings-button settings-button4" (click)="this.settingsService.setCircles()">C</a>
-	<a class="settings-button settings-button5" (click)="this.settingsService.setPreview()">P</a>
+	<a class="settings-button settings-button1"
+	[class.selected]="this.settingsService.mode == 'horizontal'"
+	(click)="this.settingsService.setHorizontal()">H</a>
+
+	<a class="settings-button settings-button2"
+	[class.selected]="this.settingsService.mode == 'vertical'"
+	(click)="this.settingsService.setVertical()">V</a>
+
+	<a class="settings-button settings-button3"
+	[class.selected]="this.settingsService.mode == 'grid'"
+	(click)="this.settingsService.setGrid()">G</a>
+
+	<a class="settings-button settings-button4"
+	[class.selected]="this.settingsService.mode == 'circles'"
+	(click)="this.settingsService.setCircles()">C</a>
+
+	<a class="settings-button settings-button5"
+	[class.selected]="this.settingsService.mode == 'preview'"
+	(click)="this.settingsService.setPreview()">P</a>
 </div>
