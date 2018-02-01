@@ -5,6 +5,7 @@ import { Subject } from 'rxjs/Subject';
 export class SettingsService {
 
   mode: string;
+  visible: boolean;
 
   modeChange: Subject<string> = new Subject<string>();
 
@@ -13,6 +14,7 @@ export class SettingsService {
        this.mode = value
     });
     this.setHorizontal()
+    this.show()
   }
 
   setVertical() {
@@ -33,6 +35,13 @@ export class SettingsService {
 
   setPreview() {
     this.modeChange.next("preview");
+  }
+
+  show() {
+    this.visible = true;
+    setTimeout(function() {
+      this.visible = false;
+    }.bind(this), 2000);
   }
 
 }

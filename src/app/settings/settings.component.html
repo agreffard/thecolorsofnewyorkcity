@@ -1,4 +1,7 @@
-<div class="settings-container">
+<div class="settings-container"
+(mouseover)="focus=true"
+(mouseout)="focus=false"
+[@visibilityChanged]="this.settingsService.visible || focus">
 	<a class="settings-button settings-button1" (click)="this.settingsService.setHorizontal()">H</a>
 	<a class="settings-button settings-button2" (click)="this.settingsService.setVertical()">V</a>
 	<a class="settings-button settings-button3" (click)="this.settingsService.setGrid()">G</a>

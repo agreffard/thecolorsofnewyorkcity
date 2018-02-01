@@ -22,6 +22,7 @@ export class StripesComponent implements OnInit {
 
   showPreview(stripe: Stripe): void {
     this.previewStripe = stripe;
+    this.settingsService.show();
   }
 
   hidePreview(): void {
