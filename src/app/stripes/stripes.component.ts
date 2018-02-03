@@ -102,7 +102,10 @@ export class StripesComponent implements OnInit {
         "grid-row": (stripe.id) % nbLines + 1
       };
     if ((this.settingsService.mode === "preview" && stripe !== this.previewStripe)
-        || this.settingsService.mode !== "preview" && stripe === this.previewStripe) {
+        || (this.settingsService.mode !== "preview"
+          && this.settingsService.mode !== "horizontal"
+          && this.settingsService.mode !== "vertical"
+          && stripe === this.previewStripe)) {
     	style["background"] = 'url("'+this.getUrl(stripe)+'")';
         style["background-size"] = 'cover';
         style["background-position"] = 'center';
