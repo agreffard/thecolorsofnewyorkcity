@@ -3,11 +3,19 @@ import { Stripe } from '../stripe';
 import { StripeService } from '../stripe.service';
 import { SettingsService } from '../settings.service';
 import { STRIPES } from '../mock-stripes';
+import { trigger, state, transition, style, animate } from '@angular/animations'	
 
 @Component({
   selector: 'app-stripes',
   templateUrl: './stripes.component.html',
-  styleUrls: ['./stripes.component.css']
+  styleUrls: ['./stripes.component.css'],
+  animations: [
+    trigger('stripeDetailsVisibility', [
+      state('true', style({ opacity: 1 })),
+      state('false', style({ opacity: 0 })),
+      transition('false => true', animate('300ms')),
+      transition('true => false', animate('500ms'))
+  ]
 })
 export class StripesComponent implements OnInit {
 
@@ -15,6 +23,8 @@ export class StripesComponent implements OnInit {
 
   selectedStripe: Stripe;
   previewStripe: Stripe;
+  selectionShown: boolean;
+  selectionShownDate: integer;
 
   onMouseOver(stripe: Stripe): void {
   	if (this.settingsService.mode === 'horizontal' || this.settingsService.mode === 'horizontal') {
@@ -22,6 +32,7 @@ export class StripesComponent implements OnInit {
   	} else {
       this.showPreview(stripe);
   	}
+  	this.settingsService.show();
   }
 
   onMouseClick(stripe: Stripe): void {
@@ -30,18 +41,28 @@ export class StripesComponent implements OnInit {
 
   selectStripe(stripe: Stripe): void {
     this.selectedStripe = stripe;
+    this.selectionShown = true;
+    this.selectionShownDate = new Date().getTime();
+    var timeout = 2000;
     setTimeout(function() {
-      this.selectedStripe = null;
-    }.bind(this), 3000);
+      if (new Date().getTime() - this.selectionShownDate >= timeout) {	
+        this.selectionShown = false;
+      }
+    }.bind(this), timeout);
   }
 
   showPreview(stripe: Stripe): void {
     this.previewStripe = stripe;
-    this.settingsService.show();
   }
 
   hidePreview(): void {
     this.previewStripe = null;
+  }
+
+  stripeDetailAnimationDone() {
+  	if (!this.selectionShown) {
+      this.selectedStripe = null
+  	}
   }
 
   constructor(private stripeService: StripeService, private settingsService: SettingsService) { }

@@ -6,6 +6,7 @@ export class SettingsService {
 
   mode: string;
   visible: boolean;
+  showTime: integer;
 
   modeChange: Subject<string> = new Subject<string>();
 
@@ -39,9 +40,12 @@ export class SettingsService {
 
   show() {
     this.visible = true;
+    this.showTime = new Date().getTime();
+    var timeout = 1000;
     setTimeout(function() {
-      this.visible = false;
-    }.bind(this), 1000);
+    if (new Date().getTime() - this.showTime >= timeout) {	
+        this.visible = false;
+      }
+    }.bind(this), timeout);
   }
-
 }

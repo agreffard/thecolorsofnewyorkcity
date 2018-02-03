@@ -1,17 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Stripe } from '../stripe';
-import { trigger, state, transition, style, animate } from '@angular/animations'
 
 @Component({
   selector: 'app-stripe-detail',
   templateUrl: './stripe-detail.component.html',
   styleUrls: ['./stripe-detail.component.css']
-  animations: [
-    trigger('visibilityChanged', [
-      state('true', style({ opacity: 1 })),
-      state('false', style({ opacity: 0 })),
-      transition('* => *', animate('500ms'))
-  ]
 })
 
 export class StripeDetailComponent implements OnInit {

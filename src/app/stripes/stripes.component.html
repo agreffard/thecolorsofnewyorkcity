@@ -12,6 +12,12 @@
       <!--<span>{{stripe.id}}</span> {{stripe.text | uppercase}} - {{stripe.color}}-->
     </div>
   </div>
-  	<app-stripe-detail [stripe]="selectedStripe"></app-stripe-detail>
+
+  <div
+    [@stripeDetailsVisibility]="selectionShown"
+    (@stripeDetailsVisibility.done)="stripeDetailAnimationDone()">
+    <app-stripe-detail [stripe]="selectedStripe"></app-stripe-detail>
+  </div>
+
 </div>
 
