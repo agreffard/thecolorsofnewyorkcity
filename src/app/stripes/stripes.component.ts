@@ -22,6 +22,7 @@ export class StripesComponent implements OnInit {
   stripes = [];
 
   selectedStripe: Stripe;
+  previousSelectedStripe: Stripe;
   previewStripe: Stripe;
   selectionShown: boolean;
   selectionShownDate: integer;
@@ -40,7 +41,12 @@ export class StripesComponent implements OnInit {
   }
 
   selectStripe(stripe: Stripe): void {
+    // avoid showing the same image indefinitely if we hide the image and stay on the same stripe
+    if (this.previousSelectedStripe === stripe) {
+      return;
+    }
     this.selectedStripe = stripe;
+    this.previousSelectedStripe = stripe;
     this.selectionShown = true;
     this.selectionShownDate = new Date().getTime();
     var timeout = 2000;
