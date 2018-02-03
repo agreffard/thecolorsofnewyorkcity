@@ -1,6 +1,8 @@
 <div *ngIf="stripe" class="stripe-detail">
   <!-- <div class="exit-button" (click)="stripe = null">X</div> -->
-  <img [src]="getUrl(stripe)" />
+  <div class="stripe-detail-img-container">
+    <img [src]="getUrl(stripe)" />
+  </div>
   <div class="stripe-info">
     <div class="preview-color">
       <div [ngStyle]="getPreviewColorStyle(stripe)" class="preview-color-circle"></div>
