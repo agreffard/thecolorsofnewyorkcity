@@ -28,7 +28,7 @@ export class StripesComponent implements OnInit {
   selectionShownDate: integer;
 
   onMouseOver(stripe: Stripe): void {
-  	if (this.settingsService.mode === 'horizontal' || this.settingsService.mode === 'horizontal') {
+    if (this.settingsService.mode === 'horizontal' || this.settingsService.mode === 'vertical') {
       this.selectStripe(stripe);
   	} else {
       this.showPreview(stripe);
@@ -51,7 +51,7 @@ export class StripesComponent implements OnInit {
     this.selectionShownDate = new Date().getTime();
     var timeout = 2000;
     setTimeout(function() {
-      if (new Date().getTime() - this.selectionShownDate >= timeout) {	
+      if (new Date().getTime() - this.selectionShownDate >= timeout) {
         this.selectionShown = false;
       }
     }.bind(this), timeout);
