@@ -11,6 +11,7 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
       state('true', style({ opacity: 1 })),
       state('false', style({ opacity: 0 })),
       transition('* => *', animate('500ms'))
+    ])
   ]
 })
 export class SettingsComponent implements OnInit {

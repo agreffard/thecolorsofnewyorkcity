@@ -15,6 +15,7 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
       state('false', style({ opacity: 0 })),
       transition('false => true', animate('300ms')),
       transition('true => false', animate('500ms'))
+    ])
   ]
 })
 export class StripesComponent implements OnInit {
@@ -25,7 +26,7 @@ export class StripesComponent implements OnInit {
   previousSelectedStripe: Stripe;
   previewStripe: Stripe;
   selectionShown: boolean;
-  selectionShownDate: integer;
+  selectionShownDate: number;
 
   onMouseOver(stripe: Stripe): void {
     if (this.settingsService.mode === 'horizontal' || this.settingsService.mode === 'vertical') {

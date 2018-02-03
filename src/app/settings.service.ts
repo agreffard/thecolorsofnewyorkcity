@@ -6,7 +6,7 @@ export class SettingsService {
 
   mode: string;
   visible: boolean;
-  showTime: integer;
+  showTime: number;
 
   modeChange: Subject<string> = new Subject<string>();
 
