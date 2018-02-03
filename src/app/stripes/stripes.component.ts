@@ -46,7 +46,7 @@ export class StripesComponent implements OnInit {
 
   selectStripe(stripe: Stripe): void {
     // avoid showing the same image indefinitely if we hide the image and stay on the same stripe
-    if (this.previousSelectedStripe === stripe) {
+    if ((this.settingsService.mode === 'vertical' || this.settingsService.mode === 'horizontal') && this.previousSelectedStripe === stripe) {
       return;
     }
     this.selectedStripe = stripe;
