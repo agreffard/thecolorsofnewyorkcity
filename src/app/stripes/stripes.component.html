@@ -6,7 +6,8 @@
     [class.selected]="stripe === selectedStripe"
     [ngStyle]="getStyle(stripe)"
     (click)="onMouseClick(stripe)"
-    (mouseover)="onMouseOver(stripe)">
+    (mouseover)="onMouseOver(stripe)"
+    (mouseout)="onMouseOut()">
       <!-- <img *ngIf="stripe === previewStripe" [src]="getUrl(stripe)" class="preview-image-square"/> -->
    <!-- <img [src]="getUrl(stripe)" />  -->
       <!--<span>{{stripe.id}}</span> {{stripe.text | uppercase}} - {{stripe.color}}-->

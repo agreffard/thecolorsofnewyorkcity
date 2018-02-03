@@ -36,6 +36,10 @@ export class StripesComponent implements OnInit {
   	this.settingsService.show();
   }
 
+  onMouseOut(): void {
+    this.hidePreview()
+  }
+
   onMouseClick(stripe: Stripe): void {
     this.selectStripe(stripe);
   }
@@ -85,6 +89,10 @@ export class StripesComponent implements OnInit {
   	return "assets/images/" + stripe.image;
   }
 
+  getThumbnailUrl(stripe) {
+    return "assets/thumbnails/" + stripe.image;
+  }
+
   getNbLines(): number {
     return this.settingsService.mode === "horizontal"
       ? 1
@@ -106,7 +114,7 @@ export class StripesComponent implements OnInit {
           && this.settingsService.mode !== "horizontal"
           && this.settingsService.mode !== "vertical"
           && stripe === this.previewStripe)) {
-    	style["background"] = 'url("'+this.getUrl(stripe)+'")';
+    	style["background"] = 'url("'+this.getThumbnailUrl(stripe)+'")';
         style["background-size"] = 'cover';
         style["background-position"] = 'center';
     } else {
