@@ -1,7 +1,9 @@
 <div class="settings-container"
-(mouseover)="focus=true"
-(mouseout)="focus=false"
-[@visibilityChanged]="this.settingsService.visible || focus">
+[class.hidden]="this.settingsService.hidden"
+(mouseover)="onMouseOver()"
+(mouseout)="onMouseOut()"
+[@visibilityChanged]="this.settingsService.visible"
+(@visibilityChanged.done)="visibleAnimationDone()">
 	<a class="settings-button settings-button1"
 	[class.selected]="this.settingsService.mode == 'horizontal'"
 	(click)="this.settingsService.setHorizontal()">H</a>

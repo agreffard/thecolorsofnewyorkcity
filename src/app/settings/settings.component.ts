@@ -19,6 +19,20 @@ export class SettingsComponent implements OnInit {
   mode: string;
   focus: boolean;
 
+  onMouseOver() {
+    this.focus = true;
+  }
+
+  onMouseOut() {
+    this.focus = false;
+  }
+
+  visibleAnimationDone() {
+    if (!this.settingsService.visible) {
+      this.settingsService.hide()
+    }
+  }
+
   constructor(private settingsService: SettingsService) {
     this.mode = settingsService.mode;
     this.focus = false;

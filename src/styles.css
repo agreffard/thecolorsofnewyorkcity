@@ -120,6 +120,11 @@ body, input[text], button {
 	display: grid;
 }
 
+.settings-container.hidden {
+  position: absolute;
+  top: -1000px;
+}
+
 .settings-button {
 	display: block;
 	width: 30px;

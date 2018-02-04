@@ -34,11 +34,11 @@ export class StripesComponent implements OnInit {
   	} else {
       this.showPreview(stripe);
   	}
-  	this.settingsService.show();
   }
 
   onMouseOut(): void {
     this.hidePreview()
+    this.settingsService.show();
   }
 
   onMouseClick(stripe: Stripe): void {

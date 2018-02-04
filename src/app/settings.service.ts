@@ -6,6 +6,7 @@ export class SettingsService {
 
   mode: string;
   visible: boolean;
+  hidden: boolean; // hidden from window (negative position)
   showTime: number;
 
   modeChange: Subject<string> = new Subject<string>();
@@ -38,12 +39,17 @@ export class SettingsService {
     this.modeChange.next("preview");
   }
 
+  hide() {
+    this.hidden = true;
+  }
+
   show() {
+    this.hidden = false;
     this.visible = true;
     this.showTime = new Date().getTime();
     var timeout = 1000;
     setTimeout(function() {
-    if (new Date().getTime() - this.showTime >= timeout) {	
+      if (new Date().getTime() - this.showTime >= timeout) {
         this.visible = false;
       }
     }.bind(this), timeout);
