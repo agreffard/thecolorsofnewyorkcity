@@ -104,6 +104,12 @@ export class StripesComponent implements OnInit {
           : 17;
   }
 
+  clickOnMainContainer(event) {
+    if (event.target === event.currentTarget) {
+      this.selectedStripe = null;
+    }
+  }
+
   getStyle(stripe) {
     let nbLines = this.getNbLines();
     let gridColumn = Math.ceil((stripe.id + 1) / nbLines)

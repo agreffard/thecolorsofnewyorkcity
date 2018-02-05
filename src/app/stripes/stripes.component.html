@@ -1,8 +1,8 @@
 
 <div class="mainContainer">
-  <div class="stripes">
-    <div
-    *ngFor="let stripe of stripes"
+  
+  <div class="stripes" (click)="clickOnMainContainer($event)">
+    <div *ngFor="let stripe of stripes"
     [class.selected]="stripe === selectedStripe"
     [ngStyle]="getStyle(stripe)"
     (click)="onMouseClick(stripe)"
