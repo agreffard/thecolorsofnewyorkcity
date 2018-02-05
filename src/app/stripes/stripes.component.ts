@@ -123,6 +123,7 @@ export class StripesComponent implements OnInit {
     }
     if (this.settingsService.mode === "circles") {
         style["border-radius"]= '50%';
+        style["margin"]= '8%';
     }
     return style;
   }
