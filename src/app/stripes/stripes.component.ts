@@ -42,14 +42,15 @@ export class StripesComponent implements OnInit {
   }
 
   onMouseClick(stripe: Stripe): void {
-    this.selectStripe(stripe);
+    this.selectStripe(stripe, true);
   }
 
-  selectStripe(stripe: Stripe): void {
-    // avoid showing the same image indefinitely if we hide the image and stay on the same stripe
-    if ((this.settingsService.mode === 'vertical' || this.settingsService.mode === 'horizontal') && this.previousSelectedStripe === stripe) {
+  selectStripe(stripe: Stripe, force: boolean): void {
+    // avoid showing the same image indefinitely if we hide the image and stay on the same stripe (force showing image on click)
+    if (!force && (this.settingsService.mode === 'vertical' || this.settingsService.mode === 'horizontal') && this.previousSelectedStripe === stripe) {
       return;
     }
+    this.stripeService.showDetail()
     this.selectedStripe = stripe;
     this.previousSelectedStripe = stripe;
     this.selectionShown = true;

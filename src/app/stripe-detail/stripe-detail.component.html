@@ -1,6 +1,6 @@
-<div *ngIf="stripe"
+<div *ngIf="stripe && stripeService.detailVisible"
 class="stripe-detail"
-(click)="stripe = null">
+(click)="stripeService.hideDetail()">
   <a href="#" class="close-button"></a>
   <div class="stripe-detail-img-container">
     <img [src]="getUrl(stripe)" />

@@ -9,6 +9,16 @@ export class StripeService {
 
   constructor() { }
 
+  detailVisible: boolean;
+
+  showDetail() {
+    this.detailVisible = true;
+  }
+
+  hideDetail() {
+    this.detailVisible = false;
+  }
+
   getStripes(): Observable<Stripe[]> {
     return of(STRIPES);
   }

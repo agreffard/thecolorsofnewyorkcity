@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Stripe } from '../stripe';
+import { StripeService } from '../stripe.service';
 
 @Component({
   selector: 'app-stripe-detail',
@@ -10,7 +11,7 @@ import { Stripe } from '../stripe';
 export class StripeDetailComponent implements OnInit {
   @Input() stripe: Stripe;
 
-  constructor() { }
+  constructor(private stripeService: StripeService) { }
 
   ngOnInit() {
   }
