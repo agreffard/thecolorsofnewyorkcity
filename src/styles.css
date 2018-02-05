@@ -163,3 +163,33 @@ body, input[text], button {
 .settings-button5 {
 	grid-column:  5;
 }
+
+.close-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+}
+
+.close-button:hover {
+  opacity: 1;
+}
+
+.close-button:before, .close-button:after {
+  position: absolute;
+  left: 10px;
+  content: ' ';
+  height: 21px;
+  width: 2px;
+  background-color: #444;
+}
+
+.close-button:before {
+  transform: rotate(45deg);
+}
+
+.close-button:after {
+  transform: rotate(-45deg);
+}

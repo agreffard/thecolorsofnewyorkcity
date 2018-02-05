@@ -1,7 +1,7 @@
 <div *ngIf="stripe"
 class="stripe-detail"
 (click)="stripe = null">
-  <!-- <div class="exit-button" (click)="stripe = null">X</div> -->
+  <a href="#" class="close-button"></a>
   <div class="stripe-detail-img-container">
     <img [src]="getUrl(stripe)" />
   </div>
