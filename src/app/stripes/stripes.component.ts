@@ -54,7 +54,7 @@ export class StripesComponent implements OnInit {
     this.previousSelectedStripe = stripe;
     this.selectionShown = true;
     this.selectionShownDate = new Date().getTime();
-    var timeout = 2000;
+    var timeout = 10000;
     setTimeout(function() {
       if (new Date().getTime() - this.selectionShownDate >= timeout) {
         this.selectionShown = false;
