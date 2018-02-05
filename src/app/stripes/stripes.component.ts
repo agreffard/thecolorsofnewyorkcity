@@ -105,10 +105,13 @@ export class StripesComponent implements OnInit {
   }
 
   getStyle(stripe) {
-  	let nbLines = this.getNbLines();
-    var style = {
-        "grid-column": Math.ceil((stripe.id + 1) / nbLines),
-        "grid-row": (stripe.id) % nbLines + 1
+    let nbLines = this.getNbLines();
+    let gridColumn = Math.ceil((stripe.id + 1) / nbLines)
+    let gridLine = (stripe.id) % nbLines + 1;
+    let style = {
+        "grid-column": gridColumn,
+        "grid-row": gridLine,
+        "cursor": 'pointer';
       };
     if ((this.settingsService.mode === "preview" && stripe !== this.previewStripe)
         || (this.settingsService.mode !== "preview"

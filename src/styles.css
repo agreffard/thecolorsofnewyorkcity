@@ -133,6 +133,7 @@ body, input[text], button {
 	margin: 5px;
 	grid-row: 1;
   background-color: #1a1a1a;
+  cursor: pointer;
 }
 
 .settings-button.selected {
