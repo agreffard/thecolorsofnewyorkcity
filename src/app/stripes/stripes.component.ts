@@ -118,7 +118,7 @@ export class StripesComponent implements OnInit {
     let style = {
         "grid-column": gridColumn,
         "grid-row": gridLine,
-        "cursor": 'pointer';
+        "cursor": 'pointer'
       };
     if ((this.settingsService.mode === "preview" && stripe !== this.previewStripe)
         || (this.settingsService.mode !== "preview"
