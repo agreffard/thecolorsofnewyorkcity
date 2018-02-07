@@ -1,0 +1,103 @@
+<div *ngIf="this.settingsService.aboutVisible" class="about-panel">
+  <a href="#" class="close-button" (click)="close()"></a>
+   
+   <div *ngIf="lang==='en'" class="about-title-container">THE COLORS OF NEW YORK CITY</div>
+   <div *ngIf="lang==='fr'" class="about-title-container">LES COULEURS DE NEW YORK CITY</div>
+
+    <div class="about-lang-container">
+      <span [class.selected]="lang==='en'" (click)="setEn()">EN</span>
+      |
+      <span [class.selected]="lang==='fr'" (click)="setFr()">FR</span>
+    </div>
+
+   <div *ngIf="lang==='en'" class="about-content-container">
+    <div class = "about-introduction">
+      <p class = "about-subcontent">
+        550 colors = 550 pictures = 550 days from July 2016 to December 2017.<br />
+        Photography project by <a href="https://agreffard.github.io">Aurélien Greffard</a>.
+      </p>
+      
+      <p class = "about-subcontent">
+        Iphone SE / Canon 550D<br />
+        Mostly from New York City<br />
+        Always from the heart
+      </p>
+      
+      <p class = "about-subcontent">
+        For a more classical view of the pictures, visit: <a href="https://agreffard-nyc.tumblr.com">https://agreffard-nyc.tumblr.com</a>
+      </p>
+    </div>
+
+
+    <div class="about-subcontent-title">CONCEPTION</div>
+      <p class = "about-subcontent">
+        I had the chance to live in New York City for 18 months in 2016/2017. BLablabla
+
+        Giving news to friends and family while being abroad; blabla
+      </p>
+
+      <div class="about-subcontent-title">EVOLUTION</div>
+      <p class = "about-subcontent">
+        Evolution: au début blabla et après blablabla
+      </p>
+
+      <div class="about-subcontent-title">INSPIRATION</div>
+     
+      <p class = "about-subcontent">
+        During the last months of my project I found inspiration in the work online
+      </p>
+      <p class = "about-subcontent">
+        A few of them directly influenced my work, including:
+      </p>
+        <ul class = "about-subcontent">
+            <li>Brian Karlsson - <a href="https://www.instagram.com/voyeur1/">@voyeur1</a></li>
+            <li>Nicolas Heller - <a href="https://www.instagram.com/newyorknico/">@newyorknico</a></li>
+            <li>Bryan Stokely - <a href="https://www.instagram.com/bstoke/">@bstoke</a></li>
+            <li>Brandon Stanton - <a href="http://www.humansofnewyork.com/">Humans of New York</a></li>
+        </ul>
+  </div>
+
+  <div *ngIf="lang==='fr'" class="about-content-container en">
+      
+      <div class = "about-introduction">
+      <p class = "about-subcontent">
+        550 couleurs = 550 photos = 550 jours entre juillet 2016 et décembre 2017.<br />
+        Projet photo par <a href="https://agreffard.github.io">Aurélien Greffard</a>.
+      </p>
+      
+      <p class = "about-subcontent">
+        Iphone SE / Canon 550D<br />
+        Princalement depuis New York City<br />
+        Toujours venant du coeur
+      </p>
+      
+      <p class = "about-subcontent">
+        Pour une vue plus classique des photos, visitez : <a href="https://agreffard-nyc.tumblr.com">https://agreffard-nyc.tumblr.com</a>
+      </p>
+    </div>
+
+    <div class="about-subcontent-title">CONCEPTION</div>
+      <p class = "about-subcontent">
+        I had the chance to live in New York City for 18 months in 2016/2017. BLablabla
+      </p>
+
+      <div class="about-subcontent-title">ÉVOLUTION</div>
+      <p class = "about-subcontent">
+        au début blabla et après blablabla
+      </p>
+
+      <div class="about-subcontent-title">INSPIRATION</div>
+      <p class = "about-subcontent">
+        au début blabla et après blablabla
+      </p>
+      <p class = "about-subcontent">
+        A few of them directly influenced my work, including:
+      </p>
+        <ul class = "about-subcontent">
+            <li>Brian Karlsson - <a href="https://www.instagram.com/voyeur1/">@voyeur1</a></li>
+            <li>Nicolas Heller - <a href="https://www.instagram.com/newyorknico/">@newyorknico</a></li>
+            <li>Bryan Stokely - <a href="https://www.instagram.com/bstoke/">@bstoke</a></li>
+            <li>Brandon Stanton - <a href="http://www.humansofnewyork.com/">Humans of New York</a></li>
+        </ul>
+  </div>
+</div>

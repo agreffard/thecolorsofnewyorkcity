@@ -8,13 +8,15 @@ import { StripeDetailComponent } from './stripe-detail/stripe-detail.component';
 import { StripeService } from './stripe.service';
 import { SettingsService } from './settings.service';
 import { SettingsComponent } from './settings/settings.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StripesComponent,
     StripeDetailComponent,
-    SettingsComponent
+    SettingsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserAnimationsModule,

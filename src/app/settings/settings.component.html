@@ -28,4 +28,9 @@
 	title="Preview mode"
 	[class.selected]="this.settingsService.mode == 'preview'"
 	(click)="this.settingsService.setPreview()">P</a>
+
+	<a class="settings-button settings-button6"
+	title="About"
+	[class.selected]="this.settingsService.aboutVisible"
+	(click)="this.settingsService.clickOnAbout()">?</a>
 </div>

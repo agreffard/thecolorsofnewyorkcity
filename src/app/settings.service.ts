@@ -8,6 +8,7 @@ export class SettingsService {
   visible: boolean;
   hidden: boolean; // hidden from window (negative position)
   showTime: number;
+  aboutVisible: boolean;
 
   modeChange: Subject<string> = new Subject<string>();
 
@@ -41,6 +42,14 @@ export class SettingsService {
 
   hide() {
     this.hidden = true;
+  }
+
+  clickOnAbout() {
+    this.aboutVisible = !this.aboutVisible;
+  }
+
+  hideAbout() {
+    this.aboutVisible = false;
   }
 
   show() {
