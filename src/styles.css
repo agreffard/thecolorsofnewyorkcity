@@ -282,3 +282,74 @@ ul.about-subcontent {
   background-color: rgba(68, 68, 68, 1);
   -webkit-border-radius: 100px;
 }
+
+
+.arrow {
+  overflow: hidden;
+  position: relative;
+  opacity: 0.6;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
+
+.arrow.left, .arrow.right {
+  width: 20px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrow.left {
+  left : 0;
+}
+
+.arrow.right {
+  right: 0;
+}
+
+.arrow::before, .arrow::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.arrow.left::before, .arrow.left::after {
+  left: 0;
+  border-left: solid 2px #444;
+}
+
+.arrow.left::before {
+  top: -50%;
+  transform: rotate(45deg);
+  transform-origin: left bottom;
+}
+
+.arrow.left::after {
+  top: 50%;
+  transform: rotate(-45deg);
+  transform-origin: left top;
+}
+
+.arrow.right::before, .arrow.right::after {
+  border-right: solid 2px #444;
+  right: 0;
+}
+
+.arrow.right::before {
+  top: -50%;
+  transform: rotate(-45deg);
+  transform-origin: right bottom;
+}
+
+.arrow.right::after {
+  top: 50%;
+  transform: rotate(45deg);
+  transform-origin: right top;
+}

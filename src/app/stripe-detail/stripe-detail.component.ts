@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Stripe } from '../stripe';
 import { StripeService } from '../stripe.service';
 
@@ -10,6 +10,7 @@ import { StripeService } from '../stripe.service';
 
 export class StripeDetailComponent implements OnInit {
   @Input() stripe: Stripe;
+  @Output() goToStripe = new EventEmitter<object>();
 
   constructor(private stripeService: StripeService) { }
 
@@ -30,4 +31,15 @@ export class StripeDetailComponent implements OnInit {
     };
   }
 
+  setStripe(id) {
+    this.goToStripe.emit(this.stripeService.getStripe(id));
+  }
+
+  next() {
+    this.setStripe(this.stripe.id + 1);
+  }
+
+  previous() {
+    this.setStripe(this.stripe.id - 1);
+  }
 }

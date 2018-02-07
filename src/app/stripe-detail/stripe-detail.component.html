@@ -1,7 +1,13 @@
 <div *ngIf="stripe && stripeService.detailVisible" class="stripe-detail">
   <a href="#" class="close-button" (click)="stripeService.hideDetail()"></a>
   <div class="stripe-detail-img-container">
+    <div *ngIf="stripe.id!==0"
+    class="arrow left"
+    (click)="previous()"></div>
     <img [src]="getUrl(stripe)" />
+    <div *ngIf="stripe.id!==549"
+    class="arrow right"
+    (click)="next()"></div>
   </div>
   <div class="stripe-info">
     <div class="preview-color">

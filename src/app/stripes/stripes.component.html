@@ -17,7 +17,10 @@
   <div
     [@stripeDetailsVisibility]="selectionShown"
     (@stripeDetailsVisibility.done)="stripeDetailAnimationDone()">
-    <app-stripe-detail [stripe]="selectedStripe"></app-stripe-detail>
+    <app-stripe-detail
+    [stripe]="selectedStripe"
+    (goToStripe)="selectStripe($event)"
+    ></app-stripe-detail>
   </div>
 
 </div>

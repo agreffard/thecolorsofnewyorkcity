@@ -23,4 +23,8 @@ export class StripeService {
     return of(STRIPES);
   }
 
+  getStripe(id) {
+    return STRIPES[id];
+  }
+
 }
