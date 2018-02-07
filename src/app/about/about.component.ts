@@ -10,7 +10,11 @@ import { StripeService } from '../stripe.service';
 export class AboutComponent implements OnInit {
 
   constructor(private settingsService: SettingsService, private stripeService: StripeService) {
-    this.setEn();
+    if(window.navigator.language && window.navigator.language.indexOf('fr') === 0) {
+      this.setFr();
+    } else {
+      this.setEn();
+    }
   }
 
   ngOnInit() {
