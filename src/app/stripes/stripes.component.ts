@@ -30,7 +30,7 @@ export class StripesComponent implements OnInit {
 
   onMouseOver(stripe: Stripe): void {
     if (this.settingsService.mode === 'horizontal' || this.settingsService.mode === 'vertical') {
-      this.selectStripe(stripe);
+      this.selectStripe(stripe, false);
   	} else {
       this.showPreview(stripe);
   	}
