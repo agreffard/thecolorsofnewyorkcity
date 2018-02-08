@@ -18,16 +18,17 @@ export class StripeDetailComponent implements OnInit {
   }
 
   getUrl(stripe) {
-  	return "assets/images/" + stripe.image;
+  	return "assets/images_full/" + stripe.image;
   }
 
   getPreviewColorStyle(stripe) {
-  let size = '50px';
-  	return {
-  	  "background-color": stripe.color,
-  	  "width": size,
-  	  "height": size,
-  	  "border-radius": '50%'
+  let size = '7vh';
+    return {
+      "background-color": stripe.color,
+      "width": size,
+      "height": size,
+      "border-radius": '50%',
+      "margin": '0 1vw'
     };
   }
 
