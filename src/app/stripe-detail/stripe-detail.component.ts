@@ -18,7 +18,7 @@ export class StripeDetailComponent implements OnInit {
   }
 
   getUrl(stripe) {
-  	return "assets/images_full/" + stripe.image;
+    return "assets/images/" + stripe.image;
   }
 
   getCircleColorStyle(stripe) {

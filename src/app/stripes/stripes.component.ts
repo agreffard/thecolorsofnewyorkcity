@@ -89,7 +89,7 @@ export class StripesComponent implements OnInit {
   }
 
   getUrl(stripe) {
-  	return "assets/images/" + stripe.image;
+    return "assets/images/" + stripe.image;
   }
 
   getThumbnailUrl(stripe) {
