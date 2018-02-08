@@ -21,8 +21,8 @@ export class StripeDetailComponent implements OnInit {
   	return "assets/images_full/" + stripe.image;
   }
 
-  getPreviewColorStyle(stripe) {
-  let size = '7vh';
+  getCircleColorStyle(stripe) {
+    let size = '7vh';
     return {
       "background-color": stripe.color,
       "width": size,
@@ -43,4 +43,9 @@ export class StripeDetailComponent implements OnInit {
   previous() {
     this.setStripe(this.stripe.id - 1);
   }
+
+  isVertical() {
+    return window.innerHeight > window.innerWidth;
+  }
 }
+

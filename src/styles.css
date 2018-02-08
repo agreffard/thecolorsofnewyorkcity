@@ -122,9 +122,16 @@ ul.about-subcontent {
 
 .stripe-detail-img-container {
   width: 100%;
-  height: 90%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.stripe-detail-img-container:not(.vertical) {
+  height: 90%;
+}
+
+.stripe-detail-img-container.vertical {
+  height: 80%;
 }
 
 .stripe-detail img {
@@ -135,30 +142,30 @@ ul.about-subcontent {
     max-height: 100%;
 }
 
-.stripe-info {
+.stripe-info:not(.vertical) {
   height: 10%;
   display: flex;
-	border: 1px dotted blue;
   align-items: center;
+}
+
+.stripe-info.vertical {
+  height: 10%;
+  display: block;
 }
 
 .preview-color {
 	display: flex;
-	width: 30%;
-	height: 100%;
-	border: 1px solid yellow;
+  height: 100%;
   align-items: center;
 }
 
-.preview-color-circle {
-/*	grid-column: 1;
-  grid-row: 1;*/
+.preview-color:not(.vertical) {
+  width: 30%;
 }
 
-.preview-color-color {
-	/*grid-column: 2;
-  grid-row: 1;*/
-  border: 1px dotted orange;
+.preview-color.vertical{
+  width: 180px;
+  margin: auto;
 }
 
 .preview-color-color span, .stripe-text {
@@ -166,11 +173,17 @@ ul.about-subcontent {
 }
 
 .stripe-text {
-  width: 70%;
   text-align: center;
   padding-left: 10%;
   padding-right: 10%;
-  border: 1px solid red;
+}
+
+.stripe-text:not(.vertical) {
+  width: 70%;
+}
+
+.stripe-text:vertical {
+  width: 100%;
 }
 
 .settings-container {
