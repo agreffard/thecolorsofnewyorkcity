@@ -19,8 +19,8 @@ export class SettingsComponent implements OnInit {
   mode: string;
   focus: boolean;
 
-  @Output() random = new EventEmitter<>();
-  @Output() modeChanged = new EventEmitter<>();
+  @Output() random = new EventEmitter<object>();
+  @Output() modeChanged = new EventEmitter<object>();
 
   clickOnRandom() {
     this.random.emit();
