@@ -207,14 +207,20 @@ ul.about-subcontent {
 
 .settings-button {
 	display: block;
-	width: 30px;
-	height: 30px;
+	width: 26px;
+	height: 26px;
 	border-radius: 50%;
 	margin: 5px;
 	grid-row: 1;
   background-color: #bbbbbb;
   cursor: pointer;
   background-clip: content-box;
+}
+
+.settings-button img {
+  position: relative;
+  top: -2px;
+  left: -2px;
 }
 
 .settings-button.selected {
