@@ -56,7 +56,7 @@ export class SettingsService {
     this.hidden = false;
     this.visible = true;
     this.showTime = new Date().getTime();
-    var timeout = 2000;
+    var timeout = 5000;
     setTimeout(function() {
       if (new Date().getTime() - this.showTime >= timeout) {
         this.visible = false;
