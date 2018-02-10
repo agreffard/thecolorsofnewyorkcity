@@ -65,7 +65,7 @@ export class SettingsComponent implements OnInit {
     }
   }
 
-  constructor(private settingsService: SettingsService) {
+  constructor(public settingsService: SettingsService) {
     this.mode = settingsService.mode;
     this.focus = false;
   }

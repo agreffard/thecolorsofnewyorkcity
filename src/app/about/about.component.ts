@@ -9,7 +9,7 @@ import { StripeService } from '../stripe.service';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private settingsService: SettingsService, private stripeService: StripeService) {
+  constructor(public settingsService: SettingsService, private stripeService: StripeService) {
     if(window.navigator.language && window.navigator.language.indexOf('fr') === 0) {
       this.setFr();
     } else {

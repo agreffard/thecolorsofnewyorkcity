@@ -12,7 +12,7 @@ export class StripeDetailComponent implements OnInit {
   @Input() stripe: Stripe;
   @Output() goToStripe = new EventEmitter<object>();
 
-  constructor(private stripeService: StripeService) { }
+  constructor(public stripeService: StripeService) { }
 
   @HostListener('document:keydown', ['$event'])
 

@@ -19,12 +19,12 @@
     (@stripeDetailsVisibility.done)="stripeDetailAnimationDone()">
     <app-stripe-detail
     [stripe]="selectedStripe"
-    (goToStripe)="selectStripe($event)"
+    (goToStripe)="selectStripe($event, false)"
     ></app-stripe-detail>
   </div>
 
   <app-settings
-  (random)="selectRandomStripe($event)"
-  (modeChanged)="hideSelection($event)"></app-settings>
+  (random)="selectRandomStripe()"
+  (modeChanged)="hideSelection()"></app-settings>
 </div>
 
