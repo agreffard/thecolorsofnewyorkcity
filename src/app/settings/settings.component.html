@@ -7,27 +7,27 @@
 	<a class="settings-button settings-button1"
 	title="Horizontal mode"
 	[class.selected]="this.settingsService.mode == 'horizontal'"
-	(click)="this.settingsService.setHorizontal()">H</a>
+	(click)="setHorizontal()">H</a>
 
 	<a class="settings-button settings-button2"
 	title="Vertical mode"
 	[class.selected]="this.settingsService.mode == 'vertical'"
-	(click)="this.settingsService.setVertical()">V</a>
+	(click)="setVertical()">V</a>
 
 	<a class="settings-button settings-button3"
 	title="Grid mode"
 	[class.selected]="this.settingsService.mode == 'grid'"
-	(click)="this.settingsService.setGrid()">G</a>
+	(click)="setGrid()">G</a>
 
 	<a class="settings-button settings-button4"
 	title="Circles mode"
 	[class.selected]="this.settingsService.mode == 'circles'"
-	(click)="this.settingsService.setCircles()">C</a>
+	(click)="setCircles()">C</a>
 
 	<a class="settings-button settings-button5"
 	title="Preview mode"
 	[class.selected]="this.settingsService.mode == 'preview'"
-	(click)="this.settingsService.setPreview()">P</a>
+	(click)="setPreview()">P</a>
 
 	<a class="settings-button settings-button6"
 	title="Random image"

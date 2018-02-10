@@ -70,6 +70,10 @@ export class StripesComponent implements OnInit {
     }.bind(this), timeout);
   }
 
+  hideSelection() {
+    this.selectionShown = false;
+  }
+
   showPreview(stripe: Stripe): void {
     this.previewStripe = stripe;
   }

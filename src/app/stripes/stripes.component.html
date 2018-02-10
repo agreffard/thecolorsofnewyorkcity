@@ -23,6 +23,8 @@
     ></app-stripe-detail>
   </div>
 
-  <app-settings (random)="selectRandomStripe($event)"></app-settings>
+  <app-settings
+  (random)="selectRandomStripe($event)"
+  (modeChanged)="hideSelection($event)"></app-settings>
 </div>
 

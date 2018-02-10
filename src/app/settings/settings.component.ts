@@ -19,10 +19,11 @@ export class SettingsComponent implements OnInit {
   mode: string;
   focus: boolean;
 
-  @Output() random = new EventEmitter<object>();
+  @Output() random = new EventEmitter<>();
+  @Output() modeChanged = new EventEmitter<>();
 
   clickOnRandom() {
-    this.random.emit()
+    this.random.emit();
   }
 
   onMouseOver() {
@@ -31,6 +32,31 @@ export class SettingsComponent implements OnInit {
 
   onMouseOut() {
     this.focus = false;
+  }
+
+  setVertical() {
+    this.settingsService.setVertical();
+    this.modeChanged.emit();
+  }
+
+  setHorizontal() {
+    this.settingsService.setHorizontal();
+    this.modeChanged.emit();
+  }
+
+  setGrid() {
+    this.settingsService.setGrid();
+    this.modeChanged.emit();
+  }
+
+  setCircles() {
+    this.settingsService.setCircles();
+    this.modeChanged.emit();
+  }
+
+  setPreview() {
+    this.settingsService.setPreview();
+    this.modeChanged.emit();
   }
 
   visibleAnimationDone() {
