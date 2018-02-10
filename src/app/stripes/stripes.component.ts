@@ -45,6 +45,12 @@ export class StripesComponent implements OnInit {
     this.selectStripe(stripe, true);
   }
 
+  selectRandomStripe() {
+    var id = Math.floor(Math.random() * 549);
+    var stripe = this.stripeService.getStripe(id)
+    this.selectStripe(stripe, true);
+  }
+
   selectStripe(stripe: Stripe, force: boolean): void {
     // avoid showing the same image indefinitely if we hide the image and stay on the same stripe (force showing image on click)
     if (!force && (this.settingsService.mode === 'vertical' || this.settingsService.mode === 'horizontal') && this.previousSelectedStripe === stripe) {

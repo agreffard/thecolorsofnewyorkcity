@@ -19,6 +19,12 @@ export class SettingsComponent implements OnInit {
   mode: string;
   focus: boolean;
 
+  @Output() random = new EventEmitter<object>();
+
+  clickOnRandom() {
+    this.random.emit()
+  }
+
   onMouseOver() {
     this.focus = true;
   }

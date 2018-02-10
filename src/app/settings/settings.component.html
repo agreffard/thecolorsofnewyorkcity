@@ -30,6 +30,10 @@
 	(click)="this.settingsService.setPreview()">P</a>
 
 	<a class="settings-button settings-button6"
+	title="Random image"
+	(click)="clickOnRandom()">?</a>
+
+	<a class="settings-button settings-button7"
 	title="About"
 	[class.selected]="this.settingsService.aboutVisible"
 	(click)="this.settingsService.clickOnAbout()">?</a>
