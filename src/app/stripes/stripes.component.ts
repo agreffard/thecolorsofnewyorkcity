@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Stripe } from '../stripe';
 import { StripeService } from '../stripe.service';
 import { SettingsService } from '../settings.service';
 import { STRIPES } from '../mock-stripes';
-import { trigger, state, transition, style, animate } from '@angular/animations'	
+import { trigger, state, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-stripes',
@@ -19,6 +19,17 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
   ]
 })
 export class StripesComponent implements OnInit {
+
+  @HostListener('document:keydown', ['$event'])
+
+  onKeydownHandler(event: KeyboardEvent) {
+    if (event.keyCode === 27) { // escape
+      if (this.selectionShown) {
+        this.hideSelection();
+      }
+      this.settingsService.hideAbout();
+    }
+  }
 
   stripes = [];
 

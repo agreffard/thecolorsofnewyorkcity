@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { Stripe } from '../stripe';
 import { StripeService } from '../stripe.service';
 
@@ -13,6 +13,17 @@ export class StripeDetailComponent implements OnInit {
   @Output() goToStripe = new EventEmitter<object>();
 
   constructor(private stripeService: StripeService) { }
+
+  @HostListener('document:keydown', ['$event'])
+
+  onKeydownHandler(event: KeyboardEvent) {
+    if (event.keyCode === 37) { // left
+      this.previous()
+    }
+    if (event.keyCode === 39) { // right
+      this.next()
+    }
+  }
 
   ngOnInit() {
   }
@@ -37,11 +48,15 @@ export class StripeDetailComponent implements OnInit {
   }
 
   next() {
-    this.setStripe(this.stripe.id + 1);
+    if (this.stripe.id < 549) {
+      this.setStripe(this.stripe.id + 1);
+    }
   }
 
   previous() {
-    this.setStripe(this.stripe.id - 1);
+    if (this.stripe.id > 0) {
+      this.setStripe(this.stripe.id - 1);
+    }
   }
 
   isVertical() {
