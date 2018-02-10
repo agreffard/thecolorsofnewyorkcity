@@ -4,37 +4,44 @@
 (mouseout)="onMouseOut()"
 [@visibilityChanged]="this.settingsService.visible"
 (@visibilityChanged.done)="visibleAnimationDone()">
-	<a class="settings-button settings-button1"
+	<img class="settings-button settings-button1"
 	title="Horizontal mode"
+	src="assets/icons/icons-prout7.png"
 	[class.selected]="this.settingsService.mode == 'horizontal'"
-	(click)="setHorizontal()">H</a>
+	(click)="setHorizontal()" />
 
-	<a class="settings-button settings-button2"
+	<img class="settings-button settings-button2"
 	title="Vertical mode"
+	src="assets/icons/icons-prout3.png"
 	[class.selected]="this.settingsService.mode == 'vertical'"
-	(click)="setVertical()">V</a>
+	(click)="setVertical()" />
 
-	<a class="settings-button settings-button3"
+	<img class="settings-button settings-button3"
 	title="Grid mode"
+	src="assets/icons/icons-prout6.png"
 	[class.selected]="this.settingsService.mode == 'grid'"
-	(click)="setGrid()">G</a>
+	(click)="setGrid()" />
 
-	<a class="settings-button settings-button4"
+	<img class="settings-button settings-button4"
 	title="Circles mode"
+	src="assets/icons/icons-prout2.png"
 	[class.selected]="this.settingsService.mode == 'circles'"
-	(click)="setCircles()">C</a>
+	(click)="setCircles()" />
 
-	<a class="settings-button settings-button5"
+	<img class="settings-button settings-button5"
 	title="Preview mode"
+	src="assets/icons/icons-prout5.png"
 	[class.selected]="this.settingsService.mode == 'preview'"
-	(click)="setPreview()">P</a>
+	(click)="setPreview()" />
 
-	<a class="settings-button settings-button6"
+	<img class="settings-button settings-button6"
 	title="Random image"
-	(click)="clickOnRandom()">?</a>
+	src="assets/icons/icons-prout4.png"
+	(click)="clickOnRandom()" />
 
-	<a class="settings-button settings-button7"
+	<img class="settings-button settings-button7"
 	title="About"
+	src="assets/icons/icons-prout1.png"
 	[class.selected]="this.settingsService.aboutVisible"
-	(click)="this.settingsService.clickOnAbout()">?</a>
+	(click)="this.settingsService.clickOnAbout()" />
 </div>

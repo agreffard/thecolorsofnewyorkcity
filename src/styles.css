@@ -212,16 +212,21 @@ ul.about-subcontent {
 	border-radius: 50%;
 	margin: 5px;
 	grid-row: 1;
-  background-color: #1a1a1a;
+  background-color: #bbbbbb;
   cursor: pointer;
+  background-clip: content-box;
 }
 
 .settings-button.selected {
-  background-color: #555555;
+  background-color: #5e84b0;
+}
+
+.settings-button.selected:hover {
+  background-color: #8aa8cc;
 }
 
 .settings-button:hover {
-  background-color: #777777;
+  background-color: #d5d5d5;
 }
 
 .settings-button1 {
