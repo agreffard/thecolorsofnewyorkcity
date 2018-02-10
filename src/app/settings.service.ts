@@ -16,7 +16,7 @@ export class SettingsService {
     this.modeChange.subscribe((value) => {
        this.mode = value
     });
-    this.setHorizontal()
+    this.setGrid()
     this.show()
   }
 
