@@ -41,7 +41,9 @@ export class StripesComponent implements OnInit {
 
   onMouseOver(stripe: Stripe): void {
     if (this.settingsService.mode === 'horizontal' || this.settingsService.mode === 'vertical') {
-      this.selectStripe(stripe, false);
+      if (!this.settingsService.aboutVisible) {
+        this.selectStripe(stripe, false);
+      }
   	} else {
       this.showPreview(stripe);
   	}
