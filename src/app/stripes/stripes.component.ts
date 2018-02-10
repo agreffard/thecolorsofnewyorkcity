@@ -83,6 +83,7 @@ export class StripesComponent implements OnInit {
 
   hideSelection() {
     this.selectionShown = false;
+    this.settingsService.hideAbout();
   }
 
   showPreview(stripe: Stripe): void {
