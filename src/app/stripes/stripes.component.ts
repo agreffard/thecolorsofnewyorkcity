@@ -21,6 +21,7 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
 export class StripesComponent implements OnInit {
 
   @HostListener('document:keydown', ['$event'])
+  @HostListener('window:orientationchange', ['$event'])
 
   onKeydownHandler(event: KeyboardEvent) {
     if (event.keyCode === 27) { // escape
@@ -29,6 +30,10 @@ export class StripesComponent implements OnInit {
       }
       this.settingsService.hideAbout();
     }
+  }
+
+  onOrientationchangeHandler(event: KeyboardEvent) {
+    this.settingsService.show();
   }
 
   stripes = [];
