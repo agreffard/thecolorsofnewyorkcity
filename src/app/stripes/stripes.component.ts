@@ -159,8 +159,8 @@ export class StripesComponent implements OnInit {
     	style["background-color"] = stripe.color;
     }
     if (this.settingsService.mode === "circles") {
-        style["border-radius"]= '50%';
-        style["margin"]= '8%';
+        style["border-radius"] = '50%';
+        style["margin"]= '0.7vh';
     }
     return style;
   }
