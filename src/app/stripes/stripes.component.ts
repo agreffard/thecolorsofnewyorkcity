@@ -77,7 +77,9 @@ export class StripesComponent implements OnInit {
     this.settingsService.hideAbout();
     this.stripeService.showDetail();
     if (this.selectedStripe) {
-      this.selectedStripe.image = "";
+      var tmpStripe = this.stripeService.getStripe(stripe.id);
+      tmpStripe.image = "";
+      this.selectedStripe = tmpStripe;
     }
     this.selectedStripe = stripe;
     this.previousSelectedStripe = stripe;
