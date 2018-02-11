@@ -135,6 +135,7 @@ export class StripesComponent implements OnInit {
       this.settingsService.hideAbout()
       this.selectedStripe = null;
     }
+    this.settingsService.show();
   }
 
   getStyle(stripe) {
