@@ -74,8 +74,11 @@ export class StripesComponent implements OnInit {
     if (!force && (this.settingsService.mode === 'vertical' || this.settingsService.mode === 'horizontal') && this.previousSelectedStripe === stripe) {
       return;
     }
-    this.settingsService.hideAbout()
-    this.stripeService.showDetail()
+    this.settingsService.hideAbout();
+    this.stripeService.showDetail();
+    if (this.selectedStripe) {
+      this.selectedStripe.image = "";
+    }
     this.selectedStripe = stripe;
     this.previousSelectedStripe = stripe;
     this.selectionShown = true;
