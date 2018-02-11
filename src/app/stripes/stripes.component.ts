@@ -75,13 +75,9 @@ export class StripesComponent implements OnInit {
       return;
     }
     this.settingsService.hideAbout();
-    this.stripeService.showDetail();
-    if (this.selectedStripe) {
-      var tmpStripe = this.stripeService.getStripe(stripe.id);
-      tmpStripe.image = "";
-      this.selectedStripe = tmpStripe;
-    }
+    this.selectedStripe = null;
     this.selectedStripe = stripe;
+    this.stripeService.showDetail();
     this.previousSelectedStripe = stripe;
     this.selectionShown = true;
     this.selectionShownDate = new Date().getTime();
