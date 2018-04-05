@@ -1,4 +1,15 @@
-# AngularColorsNyc
+# The Colors of New York City
+
+Unconventional view of my photography project in New York City.  
+550 colors = 550 pictures = 550 days from July 2016 to December 2017.
+
+Visible on https://agreffard.github.io/thecolorsofnewyorkcity/  
+Original project: https://agreffard-nyc.tumblr.com
+
+![Final picture](https://github.com/agreffard/thecolorsofnewyorkcity/blob/master/src/assets/images/images9/1.jpg "Final picture")
+
+
+---
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4.
 
